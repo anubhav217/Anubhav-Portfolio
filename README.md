@@ -1,6 +1,4 @@
-# Anubhav Majumdar — Polished React Portfolio
-
-This project is a polished React portfolio with Framer Motion animations and Typewriter effect.
+# Anubhav Majumdar — Portfolio
 
 ## Quick start (locally)
 1. Ensure Node.js (16 or 18 recommended) & npm are installed.
