@@ -1,4 +1,4 @@
-# Anubhav Majumdar — Polished React Portfolio
+# Anubhav Majumdar — Portfolio
 
 This project is a polished React portfolio with Framer Motion animations and Typewriter effect.
 
