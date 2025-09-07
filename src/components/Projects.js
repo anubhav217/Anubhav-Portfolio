@@ -32,10 +32,17 @@ export default function Projects() {
         "Peer-to-peer torrent-like file sharing system with distributed tracker and efficient file transfer.",
       tags: ["C++", "Networking", "P2P", "File Sharing"],
     },
+    {
+      title: "LaTeX Resume Template",
+      link: "https://github.com/anubhav217/LaTex-Resume-Template",
+      description:
+        "A clean, customizable LaTeX resume/CV template with modern typography and easy-to-edit sections — ideal for producing a printable professional CV.",
+      tags: ["LaTeX", "Resume", "Template", "Typography"],
+    },
   ];
 
   const [showAll, setShowAll] = useState(false);
-  const visibleProjects = showAll ? projects : projects.slice(0, 4); // default 4 visible
+  const visibleProjects = showAll ? projects : projects.slice(0, 4);
 
   return (
     <section id="projects">
@@ -73,13 +80,9 @@ export default function Projects() {
         ))}
       </motion.div>
 
-      {/* Show More / Show Less Button */}
       {projects.length > 4 && (
         <div className="show-more-container">
-          <button
-            onClick={() => setShowAll(!showAll)}
-            className="show-more-btn"
-          >
+          <button onClick={() => setShowAll(!showAll)} className="show-more-btn">
             {showAll ? "See Less" : "Show More"}
           </button>
         </div>

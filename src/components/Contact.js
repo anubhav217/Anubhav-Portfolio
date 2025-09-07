@@ -1,76 +1,67 @@
-import React from "react";
-
-// Try to load react-icons, else fallback to simple text
-let FaGithub, FaLinkedin, FaInstagram, SiLeetcode, MdEmail, HiDownload;
-
-try {
-  ({ FaGithub, FaLinkedin, FaInstagram } = require("react-icons/fa"));
-  ({ SiLeetcode } = require("react-icons/si"));
-  ({ MdEmail } = require("react-icons/md"));
-  ({ HiDownload } = require("react-icons/hi"));
-} catch (e) {
-  const Fallback = (props) => <>{props.label}</>;
-  FaGithub = (props) => <Fallback label="GitHub" {...props} />;
-  FaLinkedin = (props) => <Fallback label="LinkedIn" {...props} />;
-  FaInstagram = (props) => <Fallback label="Instagram" {...props} />;
-  SiLeetcode = (props) => <Fallback label="LeetCode" {...props} />;
-  MdEmail = (props) => <Fallback label="Email" {...props} />;
-  HiDownload = (props) => <Fallback label="Résumé" {...props} />;
-}
+import React from 'react';
+import { FaEnvelope, FaLinkedin, FaInstagram, FaDownload } from 'react-icons/fa';
+import { SiLeetcode } from 'react-icons/si';
 
 export default function Contact() {
   return (
     <section id="contact" className="contact">
-      <h2>Get In Touch</h2>
-      <p>
-        Whether you have a question or just want to say hi, feel free to drop a
-        message!
-      </p>
+      <h2 className="section-title">Get In Touch</h2>
+      <p className="contact-sub">Whether you have a question or just want to say hi, feel free to drop a message!</p>
 
       <div className="contact-links">
+        {/* Top row - 3 items */}
         <a
+          className="contact-card"
           href="https://leetcode.com/u/anubhav217/"
           target="_blank"
-          rel="noopener noreferrer"
+          rel="noreferrer"
+          title="LeetCode"
         >
-          <SiLeetcode /> LeetCode
-        </a>
-
-        <a href="mailto:anubhav.majumdar.in@gmail.com">
-          <MdEmail /> Email
+          <span className="icon"><SiLeetcode /></span>
+          <span className="label">LeetCode</span>
         </a>
 
         <a
+          className="contact-card"
+          href="mailto:anubhav.majumdar.in@gmail.com"
+          title="Email Anubhav"
+        >
+          <span className="icon"><FaEnvelope /></span>
+          <span className="label">Email</span>
+        </a>
+
+        <a
+          className="contact-card"
           href="https://www.instagram.com/anubhav._.majumdar/"
           target="_blank"
-          rel="noopener noreferrer"
+          rel="noreferrer"
+          title="Instagram"
         >
-          <FaInstagram /> Instagram
+          <span className="icon"><FaInstagram /></span>
+          <span className="label">Instagram</span>
         </a>
 
+        {/* Bottom row - 2 items centered */}
         <a
-          href="https://github.com/anubhav217"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <FaGithub /> GitHub
-        </a>
-
-        <a
+          className="contact-card"
           href="https://www.linkedin.com/in/anubhav-majumdar/"
           target="_blank"
-          rel="noopener noreferrer"
+          rel="noreferrer"
+          title="LinkedIn"
         >
-          <FaLinkedin /> LinkedIn
+          <span className="icon"><FaLinkedin /></span>
+          <span className="label">LinkedIn</span>
         </a>
 
         <a
-          className="resume-tile"
-          href={process.env.PUBLIC_URL + "/assets/resume.pdf"}
+          className="contact-card"
+          href={process.env.PUBLIC_URL + '/assets/resume.pdf'}
           target="_blank"
-          rel="noopener noreferrer"
+          rel="noreferrer"
+          title="Download Résumé"
         >
-          <HiDownload /> Download Résumé
+          <span className="icon"><FaDownload /></span>
+          <span className="label">Download Résumé</span>
         </a>
       </div>
     </section>
