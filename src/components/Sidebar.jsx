@@ -101,28 +101,28 @@ export default function Sidebar() {
 
   return (
     <aside
-      className="w-64 max-w-[15.5rem] h-screen fixed left-0 top-0 border-r border-gray-200 p-4 flex flex-col justify-between overflow-hidden"
+      className="w-64 max-w-[15.5rem] h-screen fixed left-0 top-0 border-r border-gray-200 p-6 flex flex-col overflow-hidden"
       aria-label="Sidebar"
     >
-      <div className="flex-shrink-0 flex flex-col items-center text-center" style={{ minHeight: 0 }}>
+      <div className="flex-shrink-0 flex flex-col items-center text-center pt-8" style={{ minHeight: 0 }}>
         <img
           src="/assets/profile.jpg"
           alt="Anubhav Majumdar"
           className="w-24 h-24 md:w-28 md:h-28 rounded-full object-cover shadow-sm ring-2 ring-white"
           style={{ display: "block", margin: "0 auto" }}
         />
-        <h1 className="mt-3 text-lg md:text-xl lg:text-2xl font-serif text-gray-900 leading-tight">
+        <h1 className="mt-4 text-lg md:text-xl lg:text-2xl font-serif text-gray-900 leading-tight">
           Anubhav Majumdar
         </h1>
-        <p className="mt-1 text-[11px] md:text-xs text-gray-500">Software Engineer</p>
+        <p className="mt-2 text-[11px] md:text-xs text-gray-500">Software Engineer</p>
       </div>
 
-      <nav className="mt-2" aria-label="Primary">
-        <ul className="w-full">
+      <nav className="mt-8" aria-label="Primary">
+        <ul className="w-full flex flex-col items-center">
           {NAV.map(({ id, label }) => {
             const isActive = isActiveFor(id);
             return (
-              <li key={id} className="relative">
+              <li key={id} className="relative w-full">
                 {isActive && (
                   <motion.span
                     layoutId="sidebar-active"
@@ -134,7 +134,7 @@ export default function Sidebar() {
                   type="button"
                   data-target={id}
                   onClick={() => handleClick(id)}
-                  className={`relative z-10 w-full text-left px-1 py-[6px] rounded transition-colors duration-150 ${
+                  className={`relative z-10 w-full text-center px-1 py-[6px] rounded transition-colors duration-150 ${
                     isActive ? "text-accent font-semibold" : "text-gray-600 hover:text-gray-900"
                   }`}
                 >
@@ -146,32 +146,32 @@ export default function Sidebar() {
         </ul>
       </nav>
 
-      {/* Download CV Button */}
-      <div className="mt-4 w-full flex justify-center">
-        <a
-          href="/assets/resume.pdf"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="
-            inline-block
-            px-4
-            py-2
-            border
-            border-gray-300
-            rounded-md
-            text-gray-600
-            hover:text-gray-900
-            hover:border-gray-400
-            transition-colors
-            duration-150
-          "
-        >
-          <span className="text-[11px] md:text-xs uppercase">DOWNLOAD RESUME</span>
-        </a>
-      </div>
+      <div className="mt-auto flex flex-col gap-2">
+        {/* Download CV Button */}
+        <div className="w-full flex justify-center">
+          <a
+            href="/assets/resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="
+              inline-block
+              px-4
+              py-2
+              border
+              border-gray-300
+              rounded-md
+              text-gray-600
+              hover:text-gray-900
+              hover:border-gray-400
+              transition-colors
+              duration-150
+            "
+          >
+            <span className="text-[11px] md:text-xs uppercase">DOWNLOAD RESUME</span>
+          </a>
+        </div>
 
-      <div className="mt-2 flex-shrink-0 w-full">
-        <div className="w-full flex items-center justify-center gap-4 text-gray-700">
+        <div className="w-full flex items-center justify-center gap-4 text-gray-700 pb-4">
           <a
             href="https://www.linkedin.com/in/anubhav-majumdar/"
             target="_blank"
