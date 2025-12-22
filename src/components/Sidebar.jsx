@@ -146,6 +146,30 @@ export default function Sidebar() {
         </ul>
       </nav>
 
+      {/* Download CV Button */}
+      <div className="mt-4 w-full flex justify-center">
+        <a
+          href="/assets/resume.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="
+            inline-block
+            px-4
+            py-2
+            border
+            border-gray-300
+            rounded-md
+            text-gray-600
+            hover:text-gray-900
+            hover:border-gray-400
+            transition-colors
+            duration-150
+          "
+        >
+          <span className="text-[11px] md:text-xs uppercase">DOWNLOAD RESUME</span>
+        </a>
+      </div>
+
       <div className="mt-2 flex-shrink-0 w-full">
         <div className="w-full flex items-center justify-center gap-4 text-gray-700">
           <a

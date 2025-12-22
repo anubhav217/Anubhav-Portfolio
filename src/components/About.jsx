@@ -49,30 +49,6 @@ export default function About() {
                   Software Engineer
                 </p>
 
-                {/* UPDATED BUTTON */}
-                <div className="mt-8">
-                  <a
-                    href="/assets/resume.pdf"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="
-                      inline-block
-                      px-4 py-1.5
-                      text-xs
-                      tracking-wide
-                      font-semibold
-                      border border-[#C6FF00]/70
-                      rounded-md
-                      text-[#C6FF00]
-                      hover:bg-[#C6FF00]/10
-                      transition
-                      duration-200
-                    "
-                  >
-                    DOWNLOAD MY CV
-                  </a>
-                </div>
-
             </div>
           </div>
 
