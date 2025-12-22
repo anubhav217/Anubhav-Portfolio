@@ -1,0 +1,25 @@
+/* src/styles/scroll-offset.css */
+:root {
+  /* default until JS runs */
+  --scroll-offset: 96px;
+}
+
+/* apply consistent offset for all anchor targets */
+[id] {
+  scroll-margin-top: calc(var(--scroll-offset) + env(safe-area-inset-top));
+  scroll-behavior: smooth;
+}
+
+/* small utility classes */
+.scroll-offset-sm { --scroll-offset: 56px; }
+.scroll-offset-md { --scroll-offset: 88px; }
+.scroll-offset-lg { --scroll-offset: 120px; }
+
+@media (prefers-reduced-motion: reduce) {
+  [id] {
+    scroll-margin-top: calc(var(--scroll-offset) + env(safe-area-inset-top));
+    /* IMPORTANT: let our JS controller handle smooth scrolling */
+    scroll-behavior: auto;
+  }
+  
+}

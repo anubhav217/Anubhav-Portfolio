@@ -1,0 +1,202 @@
+@import './styles/scroll-offset.css';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* --------------------------------------------------
+   GLOBAL FONTS
+-------------------------------------------------- */
+:root {
+  --serif: 'Playfair Display', serif;
+  --sans: 'Montserrat', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  font-family: var(--sans);
+  color: #111827;
+}
+
+.font-serif {
+  font-family: var(--serif);
+}
+
+/* --------------------------------------------------
+   HERO SECTION (Full-bleed image + overlay + text)
+-------------------------------------------------- */
+
+section#intro {
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+}
+
+/* background full-bleed image */
+section#intro img.absolute,
+section#intro > img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform-origin: center center;
+  z-index: 0;
+}
+
+/* gradient overlay */
+.section-hero-overlay,
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  pointer-events: none;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.65) 0%,
+    rgba(255, 255, 255, 0.03) 45%,
+    rgba(255, 255, 255, 0.35) 70%
+  );
+}
+
+/* hero content wrapper */
+.section-hero-content {
+  position: relative;
+  z-index: 20;
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* left text block */
+.section-hero-left {
+  width: 48%;
+  padding: 4.5rem 4rem;
+  display: flex;
+  align-items: center;
+}
+
+/* right side (layout stabilizer) */
+.section-hero-right {
+  flex: 1;
+}
+
+/* --------------------------------------------------
+   HERO TYPOGRAPHY
+-------------------------------------------------- */
+.hero-title {
+  font-family: var(--serif);
+  color: #ffffff;
+  margin: 0;
+  line-height: 0.92;
+  letter-spacing: -0.02em;
+  font-weight: 400;
+
+  /* UPDATED SIZE (reference matched) */
+  font-size: 6.5rem;
+}
+
+.hero-sub {
+  color: rgba(255, 255, 255, 0.95);
+  margin-top: 1.25rem;
+  font-size: 1.125rem;
+  letter-spacing: 0.06em;
+}
+
+/* neon CTA text */
+.neon-text {
+  color: #b7ff00;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+}
+
+/* CTA button styling */
+.hero-cta {
+  display: inline-block;
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  padding: 0.75rem 1.25rem;
+  border-radius: 6px;
+  background: transparent;
+  transition: all 0.18s ease;
+}
+
+.hero-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+}
+
+/* --------------------------------------------------
+   RESPONSIVE BREAKPOINTS
+-------------------------------------------------- */
+@media (max-width: 1400px) {
+  .hero-title {
+    font-size: 5.4rem;
+  }
+  .section-hero-left {
+    padding-left: 3.5rem;
+    padding-right: 3.5rem;
+  }
+}
+
+@media (max-width: 1100px) {
+  .hero-title {
+    font-size: 4.4rem;
+  }
+  .section-hero-left {
+    width: 50%;
+    padding-left: 2.75rem;
+    padding-right: 2.75rem;
+  }
+}
+
+@media (max-width: 920px) {
+  .hero-title {
+    font-size: 3.6rem;
+  }
+  .section-hero-left {
+    width: 100%;
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 820px) {
+  section#intro {
+    min-height: auto;
+  }
+
+  .section-hero-content {
+    flex-direction: column;
+  }
+
+  .section-hero-left {
+    width: 100%;
+    min-height: 46vh;
+    padding: 2.25rem;
+  }
+
+  .section-hero-right {
+    width: 100%;
+    min-height: 54vh;
+  }
+
+  .hero-title {
+    font-size: 3.4rem;
+    text-align: left;
+  }
+
+  .hero-sub {
+    font-size: 1rem;
+  }
+}
+
+/* safety for images and SVG */
+img,
+svg {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
