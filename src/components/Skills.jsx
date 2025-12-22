@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 const SKILLS = [
   {
@@ -34,10 +35,13 @@ export default function Skills() {
       <h2 className="text-3xl font-serif mt-2 mb-6">Skills & Tools</h2>
 
       <div className="space-y-6">
-        {SKILLS.map((group) => (
-          <div
+        {SKILLS.map((group, index) => (
+          <motion.div
             key={group.category}
             className="grid grid-cols-1 md:grid-cols-12 gap-4 items-start"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: index * 0.1 }}
           >
             <div className="md:col-span-3">
               <h4 className="text-lg font-medium">{group.category}</h4>
@@ -46,16 +50,29 @@ export default function Skills() {
             <div className="md:col-span-9">
               <div className="flex flex-wrap gap-3">
                 {group.items.map((item) => (
-                  <div
+                  <motion.div
                     key={item}
-                    className="px-3 py-2 border rounded-full text-sm"
+                    className="px-3 py-2 border rounded-full text-sm bg-gray-50 cursor-pointer relative"
+                    initial={{ borderColor: "#e5e7eb", boxShadow: "0 0 0px rgba(0, 0, 0, 0)" }}
+                    whileHover={{
+                      y: -8,
+                      boxShadow: "0 0 20px rgba(59, 130, 246, 0.5), 0 10px 25px rgba(0, 0, 0, 0.15)",
+                      borderColor: "#60a5fa",
+                      transition: { 
+                        type: "spring",
+                        stiffness: 300,
+                        damping: 20,
+                        boxShadow: { duration: 0.2 },
+                        borderColor: { duration: 0.2 }
+                      }
+                    }}
                   >
                     {item}
-                  </div>
+                  </motion.div>
                 ))}
               </div>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </section>

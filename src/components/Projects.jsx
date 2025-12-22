@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { motion } from 'framer-motion'
 import { FaGithub } from 'react-icons/fa'
 
 const P = [
@@ -51,7 +52,25 @@ export default function Projects() {
       <h2 className="text-3xl font-serif mt-2 mb-6">Personal Projects</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {displayedProjects.map((p, i) => (
-          <div key={i} className="border rounded p-6 shadow-sm">
+          <motion.div
+            key={i}
+            className="border rounded p-6 shadow-sm bg-gray-50 relative cursor-pointer"
+            initial={{ opacity: 0, y: 20, borderColor: "#e5e7eb", boxShadow: "0 0 0px rgba(0, 0, 0, 0)" }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: i * 0.1 }}
+            whileHover={{
+              y: -8,
+              boxShadow: "0 0 20px rgba(59, 130, 246, 0.5), 0 10px 25px rgba(0, 0, 0, 0.15)",
+              borderColor: "#60a5fa",
+              transition: { 
+                type: "spring",
+                stiffness: 300,
+                damping: 20,
+                boxShadow: { duration: 0.2 },
+                borderColor: { duration: 0.2 }
+              }
+            }}
+          >
             <div className="flex items-center gap-2 mb-3">
               <FaGithub className="text-gray-700 w-5 h-5" />
               <h4 className="text-lg font-semibold">{p.name}</h4>
@@ -75,17 +94,19 @@ export default function Projects() {
             >
               View on GitHub →
             </a>
-          </div>
+          </motion.div>
         ))}
       </div>
       {P.length > initialProjects && (
         <div className="flex justify-center mt-6">
-          <button
+          <motion.button
             onClick={() => setShowAll(!showAll)}
             className="px-6 py-2 bg-white border border-gray-300 hover:bg-gray-50 text-gray-800 rounded-md font-medium transition-colors"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
           >
             {showAll ? 'Show Less' : 'Show More'}
-          </button>
+          </motion.button>
         </div>
       )}
     </section>
