@@ -7,14 +7,14 @@ import { FaLinkedin, FaGithub } from "react-icons/fa";
 import { HiOutlineMail } from "react-icons/hi";
 
 const NAV = [
-  { id: "intro", label: "INTRODUCTION" },
   { id: "about", label: "ABOUT" },
-  { id: "education", label: "EDUCATION" },
+  { id: "skills", label: "SKILLS" },
   { id: "experience", label: "EXPERIENCE" },
   { id: "projects", label: "PROJECTS" },
-  { id: "skills", label: "SKILLS" },
+  { id: "education", label: "EDUCATION" },
   { id: "contact", label: "CONTACT" },
 ];
+
 
 export default function Sidebar() {
   // stable id list for hook

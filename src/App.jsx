@@ -1,6 +1,5 @@
 import React from 'react'
 import Sidebar from './components/Sidebar'
-import Hero from './components/Hero'
 import About from './components/About'
 import Education from './components/Education'
 import Experience from './components/Experience'
@@ -13,13 +12,12 @@ export default function App() {
     <div className="min-h-screen bg-white text-gray-800">
       <Sidebar />
       <main className="ml-72">
-        <Hero />
+        <About />
         <div className="container mx-auto px-8 py-12">
-          <About />
-          <Education />
+          <Skills />
           <Experience />
           <Projects />
-          <Skills />
+          <Education />
           <Contact />
         </div>
       </main>
