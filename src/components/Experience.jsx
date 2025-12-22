@@ -1,33 +1,91 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { motion } from 'framer-motion'
+import { FaBriefcase } from 'react-icons/fa'
 
 const EXP = [
-  { title: 'Software Development Engineer III', org: 'PwC India', date: 'Sep 2021 - Present', details: 'Worked on AWS migrations and building scalable services.' },
-  { title: 'Software Engineer Intern', org: 'Internship', date: '2020', details: 'Various internships and projects.' }
+  { title: 'PwC India : SDE III', date: 'Sep 2021 - Present', details: 'Worked on AWS migrations and building scalable services.', color: 'blue' },
+  { title: 'SDE Intern - CodeChef', date: '2020', details: 'Various internships and projects.', color: 'red' }
 ]
 
+const colorClasses = {
+  blue: 'bg-blue-500',
+  red: 'bg-red-500',
+  yellow: 'bg-yellow-500'
+}
+
 export default function Experience() {
+  const [showAll, setShowAll] = useState(false)
+  const shouldShowButton = EXP.length > 4
+  const displayedExp = shouldShowButton && !showAll ? EXP.slice(0, 4) : EXP
+
   return (
     <section id="experience" className="mb-12">
       <h3 className="text-sm text-gray-400">HIGHLIGHTS</h3>
       <h2 className="text-3xl font-serif mt-2 mb-6">Experience</h2>
-      <div className="space-y-8">
-        {EXP.map((e, i) => (
-          <div key={i} className="flex items-start space-x-6">
-            <div className="flex-shrink-0 pt-2">
-              <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600">{i+1}</div>
-            </div>
-            <div className="flex-1 bg-gray-50 border rounded p-6">
-              <div className="flex justify-between items-start">
-                <div>
-                  <h4 className="text-xl font-semibold">{e.title}</h4>
-                  <div className="text-sm text-gray-500">{e.org}</div>
-                </div>
-                <div className="text-sm text-gray-400">{e.date}</div>
+      <div className="relative">
+        {/* Vertical timeline line */}
+        <div className="absolute left-5 top-0 bottom-0 w-0.5 bg-gray-300"></div>
+        
+        <div className="space-y-8">
+          {displayedExp.map((e, i) => (
+            <motion.div
+              key={i}
+              className="flex items-start space-x-6 relative"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: i * 0.1 }}
+            >
+              {/* Timeline icon */}
+              <div className="flex-shrink-0 relative z-10">
+                <motion.div
+                  className={`w-10 h-10 rounded-full ${colorClasses[e.color]} flex items-center justify-center text-white`}
+                  whileHover={{ scale: 1.1 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                >
+                  <FaBriefcase className="w-5 h-5" />
+                </motion.div>
               </div>
-              <p className="mt-4 text-gray-700">{e.details}</p>
-            </div>
+              
+              {/* Content tile */}
+              <motion.div
+                className="flex-1 bg-gray-50 border rounded p-6 relative cursor-pointer"
+                initial={{ borderColor: "#e5e7eb", boxShadow: "0 0 0px rgba(0, 0, 0, 0)" }}
+                whileHover={{
+                  y: -8,
+                  boxShadow: "0 0 20px rgba(59, 130, 246, 0.5), 0 10px 25px rgba(0, 0, 0, 0.15)",
+                  borderColor: "#60a5fa",
+                  transition: { 
+                    type: "spring",
+                    stiffness: 300,
+                    damping: 20,
+                    boxShadow: { duration: 0.2 },
+                    borderColor: { duration: 0.2 }
+                  }
+                }}
+              >
+                <div className="flex justify-between items-start mb-4">
+                  <h4 className="text-xl font-semibold">{e.title}</h4>
+                  <div className="text-sm text-gray-400 whitespace-nowrap ml-4">{e.date}</div>
+                </div>
+                <p className="text-gray-700 leading-relaxed">{e.details}</p>
+              </motion.div>
+            </motion.div>
+          ))}
+        </div>
+        
+        {/* See More/See Less Button */}
+        {shouldShowButton && (
+          <div className="mt-8 flex justify-center">
+            <motion.button
+              onClick={() => setShowAll(!showAll)}
+              className="px-6 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              {showAll ? 'See Less' : 'See More'}
+            </motion.button>
           </div>
-        ))}
+        )}
       </div>
     </section>
   )
