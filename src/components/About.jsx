@@ -28,7 +28,7 @@ export default function About() {
           <div className="w-1/2 flex items-center p-16">
             <div className="max-w-[720px] text-white">
 
-              {/* UPDATED ARJUN-STYLE HERO TITLE (fixed smaller size) */}
+              {}
               <h1
                 className="
                 font-serif
@@ -39,14 +39,14 @@ export default function About() {
                 tracking-tight
                 "
               >
-              Hi
+              Hi👋,
               <br />
               I&apos;m Anubhav
               </h1>
 
 
                 <p className="mt-6 text-lg hero-sub">
-                  Software Engineer • Kolkata, India
+                  Software Engineer
                 </p>
 
                 {/* UPDATED BUTTON */}
