@@ -106,7 +106,7 @@ export default function Sidebar() {
     >
       <div className="flex-shrink-0 flex flex-col items-center text-center pt-8" style={{ minHeight: 0 }}>
         <img
-          src="/assets/profile.jpg"
+          src={`${import.meta.env.BASE_URL}assets/profile.jpg`}
           alt="Anubhav Majumdar"
           className="w-24 h-24 md:w-28 md:h-28 rounded-full object-cover shadow-sm ring-2 ring-white"
           style={{ display: "block", margin: "0 auto" }}
@@ -150,7 +150,7 @@ export default function Sidebar() {
         {/* Download CV Button */}
         <div className="w-full">
           <a
-            href="/assets/resume.pdf"
+            href={`${import.meta.env.BASE_URL}assets/resume.pdf`}
             target="_blank"
             rel="noopener noreferrer"
             className="

@@ -7,7 +7,7 @@ export default function About() {
       <section id="about" className="relative w-full min-h-screen overflow-hidden">
         {/* Full-bleed background image */}
         <img
-          src="/assets/hero.jpg"
+          src={`${import.meta.env.BASE_URL}assets/hero.jpg`}
           alt="hero background"
           className="absolute inset-0 w-full h-full object-cover z-0"
           style={{ objectPosition: 'right center' }}
