@@ -8,23 +8,23 @@ const SKILLS = [
   },
   {
     category: "Frameworks",
-    items: ["React.js", "Angular.js", "Node.js", "Next.js", "Django", "Flask", "JUnit", "FastAPI"],
+    items: ["React", "React Native", "Node", "Next.js", "Django", "Flask", "JUnit", "FastAPI"],
   },
   {
     category: "Automation Frameworks",
     items: ["Playwright", "Cypress", "Selenium"],
   },
   {
-    category: "Databases",
-    items: ["Redis", "MySQL", "MongoDB", "GraphQL", "PostgreSQL"],
+    category: "Tools",
+    items: ["Git", "Docker", "Kubernetes", "Amazon Web Services"],
   },
   {
-    category: "Performance Engineering Tools",
-    items: ["JMeter", "LoadRunner"],
+    category: "Databases",
+    items: ["Redis", "MySQL", "MongoDB", "PostgreSQL"],
   },
   {
     category: "Other",
-    items: ["System Design", "Amazon Web Services", "Design Patterns"],
+    items: ["System Design", "Design Patterns", "Data Structures", "Algorithms"],
   },
 ];
 
