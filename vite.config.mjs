@@ -5,6 +5,7 @@ export default defineConfig({
   plugins: [react()],
   base: process.env.NODE_ENV === 'production' ? '/Anubhav-Portfolio/' : '/',
   server: {
-    port: 5173
+    port: 5173,
+    host: true // Allow access from network devices
   }
 })

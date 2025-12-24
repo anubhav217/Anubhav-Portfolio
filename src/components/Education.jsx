@@ -13,7 +13,7 @@ export default function Education() {
   return (
     <section id="education" className="mb-12">
       <h3 className="text-sm text-gray-400 dark:text-gray-500">EDUCATION</h3>
-      <h2 className="text-3xl font-serif mt-2 mb-6 dark:text-gray-100">Education</h2>
+      <h2 className="text-2xl sm:text-3xl font-serif mt-2 mb-6 dark:text-gray-100">Education</h2>
       <div className="space-y-4">
         {displayedEduc.map((e, i) => (
           <motion.div
@@ -35,9 +35,9 @@ export default function Education() {
               }
             }}
           >
-            <div className="flex justify-between items-start">
+            <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2">
               <div>
-                <div className="text-lg font-medium dark:text-gray-100">{e.title}</div>
+                <div className="text-base sm:text-lg font-medium dark:text-gray-100">{e.title}</div>
                 <div className="text-sm text-gray-500 dark:text-gray-400 mt-1">{e.org}</div>
               </div>
               <div className="text-sm text-gray-400 dark:text-gray-400">{e.date}</div>

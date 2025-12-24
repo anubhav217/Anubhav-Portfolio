@@ -12,7 +12,7 @@ export default function Contact() {
         Contact
       </h2>
 
-      <h3 className="mt-2 text-4xl font-serif text-gray-900 dark:text-gray-100">Get in touch</h3>
+      <h3 className="mt-2 text-3xl sm:text-4xl font-serif text-gray-900 dark:text-gray-100">Get in touch</h3>
 
       {/* Card with subtle tiled decorative background */}
       <div className="mt-6 border border-gray-200 dark:border-gray-700 rounded-lg p-6 bg-white dark:bg-gray-800 transition-colors duration-200">

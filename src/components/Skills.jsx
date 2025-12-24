@@ -32,7 +32,7 @@ export default function Skills() {
   return (
     <section id="skills" className="mb-12">
       <h3 className="text-sm text-gray-400 dark:text-gray-500">SKILLS</h3>
-      <h2 className="text-3xl font-serif mt-2 mb-6 dark:text-gray-100">Skills & Tools</h2>
+      <h2 className="text-2xl sm:text-3xl font-serif mt-2 mb-6 dark:text-gray-100">Skills & Tools</h2>
 
       <div className="space-y-6">
         {SKILLS.map((group, index) => (

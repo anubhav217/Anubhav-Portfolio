@@ -21,16 +21,16 @@ export default function Experience() {
   return (
     <section id="experience" className="mb-12">
       <h3 className="text-sm text-gray-400 dark:text-gray-500">HIGHLIGHTS</h3>
-      <h2 className="text-3xl font-serif mt-2 mb-6 dark:text-gray-100">Experience</h2>
+      <h2 className="text-2xl sm:text-3xl font-serif mt-2 mb-6 dark:text-gray-100">Experience</h2>
       <div className="relative">
         {/* Vertical timeline line */}
-        <div className="absolute left-5 top-0 bottom-0 w-0.5 bg-gray-300 dark:bg-gray-600"></div>
+        <div className="absolute left-4 sm:left-5 top-0 bottom-0 w-0.5 bg-gray-300 dark:bg-gray-600"></div>
         
-        <div className="space-y-8">
+        <div className="space-y-6 sm:space-y-8">
           {displayedExp.map((e, i) => (
             <motion.div
               key={i}
-              className="flex items-start space-x-6 relative"
+              className="flex items-start space-x-3 sm:space-x-6 relative"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
@@ -38,11 +38,11 @@ export default function Experience() {
               {/* Timeline icon */}
               <div className="flex-shrink-0 relative z-10">
                 <motion.div
-                  className={`w-10 h-10 rounded-full ${colorClasses[e.color]} flex items-center justify-center text-white`}
+                  className={`w-8 h-8 sm:w-10 sm:h-10 rounded-full ${colorClasses[e.color]} flex items-center justify-center text-white`}
                   whileHover={{ scale: 1.1 }}
                   transition={{ type: "spring", stiffness: 400, damping: 10 }}
                 >
-                  <FaBriefcase className="w-5 h-5" />
+                  <FaBriefcase className="w-4 h-4 sm:w-5 sm:h-5" />
                 </motion.div>
               </div>
               
@@ -63,11 +63,11 @@ export default function Experience() {
                   }
                 }}
               >
-                <div className="flex justify-between items-start mb-4">
-                  <h4 className="text-xl font-semibold dark:text-gray-100">{e.title}</h4>
-                  <div className="text-sm text-gray-400 dark:text-gray-400 whitespace-nowrap ml-4">{e.date}</div>
+                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-4 gap-2">
+                  <h4 className="text-lg sm:text-xl font-semibold dark:text-gray-100">{e.title}</h4>
+                  <div className="text-sm text-gray-400 dark:text-gray-400 sm:whitespace-nowrap sm:ml-4">{e.date}</div>
                 </div>
-                <p className="text-gray-700 dark:text-gray-300 leading-relaxed">{e.details}</p>
+                <p className="text-sm sm:text-base text-gray-700 dark:text-gray-300 leading-relaxed">{e.details}</p>
               </motion.div>
             </motion.div>
           ))}

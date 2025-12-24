@@ -49,7 +49,7 @@ export default function Projects() {
   return (
     <section id="projects" className="mb-12">
       <h3 className="text-sm text-gray-400 dark:text-gray-500">PROJECTS</h3>
-      <h2 className="text-3xl font-serif mt-2 mb-6 dark:text-gray-100">Personal Projects</h2>
+      <h2 className="text-2xl sm:text-3xl font-serif mt-2 mb-6 dark:text-gray-100">Personal Projects</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {displayedProjects.map((p, i) => (
           <motion.div
@@ -72,10 +72,10 @@ export default function Projects() {
             }}
           >
             <div className="flex items-center gap-2 mb-3">
-              <FaGithub className="text-gray-700 dark:text-gray-300 w-5 h-5" />
-              <h4 className="text-lg font-semibold dark:text-gray-100">{p.name}</h4>
+              <FaGithub className="text-gray-700 dark:text-gray-300 w-4 h-4 sm:w-5 sm:h-5" />
+              <h4 className="text-base sm:text-lg font-semibold dark:text-gray-100">{p.name}</h4>
             </div>
-            <p className="mt-2 text-gray-600 dark:text-gray-300 leading-relaxed">{p.desc}</p>
+            <p className="mt-2 text-sm sm:text-base text-gray-600 dark:text-gray-300 leading-relaxed">{p.desc}</p>
             <div className="mt-4 flex flex-wrap gap-2">
               {p.tags.map((tag, idx) => (
                 <span 

@@ -17,6 +17,8 @@ const NAV = [
 
 
 export default function Sidebar() {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
+  
   // stable id list for hook
   const sectionIds = NAV.map((n) => n.id);
   // hook returns the active section id (string or undefined)
@@ -57,6 +59,9 @@ export default function Sidebar() {
     if (!id) return;
     const el = document.getElementById(id);
     if (!el) return;
+  
+    // Close mobile menu when clicking a link
+    setIsMobileMenuOpen(false);
   
     const scrollOffset = getScrollOffset() || 0;
     const elementTop = Math.round(el.getBoundingClientRect().top + window.pageYOffset);
@@ -100,21 +105,51 @@ export default function Sidebar() {
   };
 
   return (
-    <aside
-      className="w-64 max-w-[15.5rem] h-screen fixed left-0 top-0 border-r border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-6 flex flex-col overflow-hidden transition-colors duration-200"
-      aria-label="Sidebar"
-    >
-      <div className="flex-shrink-0 flex flex-col items-center text-center pt-8" style={{ minHeight: 0 }}>
+    <>
+      {/* Mobile Menu Button */}
+      <button
+        onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+        className="lg:hidden fixed top-4 left-4 z-50 p-2 rounded-md bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 shadow-lg"
+        aria-label="Toggle menu"
+      >
+        <svg className="w-6 h-6 text-gray-700 dark:text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          {isMobileMenuOpen ? (
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+          ) : (
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+          )}
+        </svg>
+      </button>
+
+      {/* Mobile Overlay */}
+      {isMobileMenuOpen && (
+        <div
+          className="lg:hidden fixed inset-0 bg-black bg-opacity-50 z-40"
+          onClick={() => setIsMobileMenuOpen(false)}
+        />
+      )}
+
+      <aside
+        className={`w-64 max-w-[15.5rem] h-screen fixed left-0 top-0 border-r border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-4 sm:p-6 flex flex-col overflow-y-auto transition-colors duration-200 z-40 transform transition-transform duration-300 ${
+          isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'
+        } lg:translate-x-0`}
+        aria-label="Sidebar"
+      >
+      <div className="flex-shrink-0 flex flex-col items-center text-center pt-6 sm:pt-8" style={{ minHeight: 0 }}>
         <img
           src={`${import.meta.env.BASE_URL}assets/profile.jpg`}
           alt="Anubhav Majumdar"
-          className="w-24 h-24 md:w-28 md:h-28 rounded-full object-cover shadow-sm ring-2 ring-white"
-          style={{ display: "block", margin: "0 auto" }}
+          className="w-28 h-28 sm:w-24 sm:h-24 md:w-28 md:h-28 rounded-full object-cover shadow-sm ring-2 ring-white"
+          style={{ 
+            display: "block", 
+            margin: "0 auto",
+            objectPosition: "center 20%"
+          }}
         />
-        <h1 className="mt-4 text-lg md:text-xl lg:text-2xl font-serif text-gray-900 dark:text-gray-100 leading-tight">
+        <h1 className="mt-3 sm:mt-4 text-base sm:text-lg md:text-xl lg:text-2xl font-serif text-gray-900 dark:text-gray-100 leading-tight">
           Anubhav Majumdar
         </h1>
-        <p className="mt-2 text-[11px] md:text-xs text-gray-500 dark:text-gray-400">Software Engineer</p>
+        <p className="mt-1 sm:mt-2 text-[10px] sm:text-[11px] md:text-xs text-gray-500 dark:text-gray-400">Software Engineer</p>
       </div>
 
       <nav className="mt-6" aria-label="Primary">
@@ -216,5 +251,6 @@ export default function Sidebar() {
         </div>
       </div>
     </aside>
+    </>
   );
 }

@@ -13,9 +13,9 @@ export default function App() {
     <div className="min-h-screen bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-100 transition-colors duration-200">
       <ThemeToggle />
       <Sidebar />
-      <main className="ml-72">
+      <main className="lg:ml-64 ml-0">
         <About />
-        <div className="container mx-auto px-8 py-12">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
           <Skills />
           <Experience />
           <Projects />
