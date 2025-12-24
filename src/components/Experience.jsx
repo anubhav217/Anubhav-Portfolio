@@ -20,11 +20,11 @@ export default function Experience() {
 
   return (
     <section id="experience" className="mb-12">
-      <h3 className="text-sm text-gray-400">HIGHLIGHTS</h3>
-      <h2 className="text-3xl font-serif mt-2 mb-6">Experience</h2>
+      <h3 className="text-sm text-gray-400 dark:text-gray-500">HIGHLIGHTS</h3>
+      <h2 className="text-3xl font-serif mt-2 mb-6 dark:text-gray-100">Experience</h2>
       <div className="relative">
         {/* Vertical timeline line */}
-        <div className="absolute left-5 top-0 bottom-0 w-0.5 bg-gray-300"></div>
+        <div className="absolute left-5 top-0 bottom-0 w-0.5 bg-gray-300 dark:bg-gray-600"></div>
         
         <div className="space-y-8">
           {displayedExp.map((e, i) => (
@@ -48,8 +48,8 @@ export default function Experience() {
               
               {/* Content tile */}
               <motion.div
-                className="flex-1 bg-gray-50 border rounded p-6 relative cursor-pointer"
-                initial={{ borderColor: "#e5e7eb", boxShadow: "0 0 0px rgba(0, 0, 0, 0)" }}
+              className="flex-1 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded p-6 relative cursor-pointer"
+              initial={{ borderColor: "#e5e7eb", boxShadow: "0 0 0px rgba(0, 0, 0, 0)" }}
                 whileHover={{
                   y: -8,
                   boxShadow: "0 0 20px rgba(59, 130, 246, 0.5), 0 10px 25px rgba(0, 0, 0, 0.15)",
@@ -64,10 +64,10 @@ export default function Experience() {
                 }}
               >
                 <div className="flex justify-between items-start mb-4">
-                  <h4 className="text-xl font-semibold">{e.title}</h4>
-                  <div className="text-sm text-gray-400 whitespace-nowrap ml-4">{e.date}</div>
+                  <h4 className="text-xl font-semibold dark:text-gray-100">{e.title}</h4>
+                  <div className="text-sm text-gray-400 dark:text-gray-400 whitespace-nowrap ml-4">{e.date}</div>
                 </div>
-                <p className="text-gray-700 leading-relaxed">{e.details}</p>
+                <p className="text-gray-700 dark:text-gray-300 leading-relaxed">{e.details}</p>
               </motion.div>
             </motion.div>
           ))}

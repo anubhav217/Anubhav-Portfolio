@@ -12,13 +12,13 @@ export default function Education() {
 
   return (
     <section id="education" className="mb-12">
-      <h3 className="text-sm text-gray-400">EDUCATION</h3>
-      <h2 className="text-3xl font-serif mt-2 mb-6">Education</h2>
+      <h3 className="text-sm text-gray-400 dark:text-gray-500">EDUCATION</h3>
+      <h2 className="text-3xl font-serif mt-2 mb-6 dark:text-gray-100">Education</h2>
       <div className="space-y-4">
         {displayedEduc.map((e, i) => (
           <motion.div
             key={i}
-            className="bg-gray-50 border rounded p-6 relative cursor-pointer"
+            className="bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded p-6 relative cursor-pointer"
             initial={{ opacity: 0, y: 20, borderColor: "#e5e7eb", boxShadow: "0 0 0px rgba(0, 0, 0, 0)" }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: i * 0.1 }}
@@ -37,10 +37,10 @@ export default function Education() {
           >
             <div className="flex justify-between items-start">
               <div>
-                <div className="text-lg font-medium">{e.title}</div>
-                <div className="text-sm text-gray-500 mt-1">{e.org}</div>
+                <div className="text-lg font-medium dark:text-gray-100">{e.title}</div>
+                <div className="text-sm text-gray-500 dark:text-gray-400 mt-1">{e.org}</div>
               </div>
-              <div className="text-sm text-gray-400">{e.date}</div>
+              <div className="text-sm text-gray-400 dark:text-gray-400">{e.date}</div>
             </div>
           </motion.div>
         ))}

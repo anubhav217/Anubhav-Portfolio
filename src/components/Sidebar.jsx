@@ -101,7 +101,7 @@ export default function Sidebar() {
 
   return (
     <aside
-      className="w-64 max-w-[15.5rem] h-screen fixed left-0 top-0 border-r border-gray-200 p-6 flex flex-col overflow-hidden"
+      className="w-64 max-w-[15.5rem] h-screen fixed left-0 top-0 border-r border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-6 flex flex-col overflow-hidden transition-colors duration-200"
       aria-label="Sidebar"
     >
       <div className="flex-shrink-0 flex flex-col items-center text-center pt-8" style={{ minHeight: 0 }}>
@@ -111,10 +111,10 @@ export default function Sidebar() {
           className="w-24 h-24 md:w-28 md:h-28 rounded-full object-cover shadow-sm ring-2 ring-white"
           style={{ display: "block", margin: "0 auto" }}
         />
-        <h1 className="mt-4 text-lg md:text-xl lg:text-2xl font-serif text-gray-900 leading-tight">
+        <h1 className="mt-4 text-lg md:text-xl lg:text-2xl font-serif text-gray-900 dark:text-gray-100 leading-tight">
           Anubhav Majumdar
         </h1>
-        <p className="mt-2 text-[11px] md:text-xs text-gray-500">Software Engineer</p>
+        <p className="mt-2 text-[11px] md:text-xs text-gray-500 dark:text-gray-400">Software Engineer</p>
       </div>
 
       <nav className="mt-6" aria-label="Primary">
@@ -135,7 +135,7 @@ export default function Sidebar() {
                   data-target={id}
                   onClick={() => handleClick(id)}
                   className={`relative z-10 w-full text-center px-1 py-[6px] rounded transition-colors duration-150 ${
-                    isActive ? "text-accent font-semibold" : "text-gray-600 hover:text-gray-900"
+                    isActive ? "text-accent font-semibold" : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100"
                   }`}
                 >
                   <span className="text-[11px] md:text-xs uppercase">{label}</span>
@@ -161,13 +161,19 @@ export default function Sidebar() {
               py-2
               border
               border-gray-300
+              dark:border-gray-600
               rounded-md
               text-[11px]
               md:text-xs
               uppercase
               text-gray-600
+              dark:text-gray-300
               hover:text-gray-900
+              dark:hover:text-gray-100
               hover:border-gray-400
+              dark:hover:border-gray-500
+              bg-white
+              dark:bg-gray-700
               transition-colors
               duration-150
             "
@@ -176,13 +182,13 @@ export default function Sidebar() {
           </a>
         </div>
 
-        <div className="w-full flex items-center justify-center gap-5 text-gray-600 pb-2">
+        <div className="w-full flex items-center justify-center gap-5 text-gray-600 dark:text-gray-400 pb-2">
           <a
             href="https://www.linkedin.com/in/anubhav-majumdar/"
             target="_blank"
             rel="noreferrer"
             aria-label="LinkedIn"
-            className="hover:text-gray-900 transition-colors duration-150"
+            className="hover:text-gray-900 dark:hover:text-gray-100 transition-colors duration-150"
             title="LinkedIn"
           >
             <FaLinkedin className="w-4 h-4" />
@@ -191,7 +197,7 @@ export default function Sidebar() {
           <a 
             href="mailto:anubhav.majumdar.in@gmail.com" 
             aria-label="Email" 
-            className="hover:text-gray-900 transition-colors duration-150" 
+            className="hover:text-gray-900 dark:hover:text-gray-100 transition-colors duration-150" 
             title="Email"
           >
             <HiOutlineMail className="w-4 h-4" />
@@ -202,7 +208,7 @@ export default function Sidebar() {
             target="_blank" 
             rel="noreferrer" 
             aria-label="GitHub" 
-            className="hover:text-gray-900 transition-colors duration-150" 
+            className="hover:text-gray-900 dark:hover:text-gray-100 transition-colors duration-150" 
             title="GitHub"
           >
             <FaGithub className="w-4 h-4" />

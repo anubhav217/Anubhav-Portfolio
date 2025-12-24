@@ -31,8 +31,8 @@ const SKILLS = [
 export default function Skills() {
   return (
     <section id="skills" className="mb-12">
-      <h3 className="text-sm text-gray-400">SKILLS</h3>
-      <h2 className="text-3xl font-serif mt-2 mb-6">Skills & Tools</h2>
+      <h3 className="text-sm text-gray-400 dark:text-gray-500">SKILLS</h3>
+      <h2 className="text-3xl font-serif mt-2 mb-6 dark:text-gray-100">Skills & Tools</h2>
 
       <div className="space-y-6">
         {SKILLS.map((group, index) => (
@@ -44,7 +44,7 @@ export default function Skills() {
             transition={{ duration: 0.5, delay: index * 0.1 }}
           >
             <div className="md:col-span-3">
-              <h4 className="text-lg font-medium">{group.category}</h4>
+              <h4 className="text-lg font-medium dark:text-gray-200">{group.category}</h4>
             </div>
 
             <div className="md:col-span-9">
@@ -52,7 +52,7 @@ export default function Skills() {
                 {group.items.map((item) => (
                   <motion.div
                     key={item}
-                    className="px-3 py-2 border rounded-full text-sm bg-gray-50 cursor-pointer relative"
+                    className="px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-full text-sm bg-gray-50 dark:bg-gray-700 text-gray-700 dark:text-gray-300 cursor-pointer relative"
                     initial={{ borderColor: "#e5e7eb", boxShadow: "0 0 0px rgba(0, 0, 0, 0)" }}
                     whileHover={{
                       y: -8,

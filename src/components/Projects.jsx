@@ -48,13 +48,13 @@ export default function Projects() {
 
   return (
     <section id="projects" className="mb-12">
-      <h3 className="text-sm text-gray-400">PROJECTS</h3>
-      <h2 className="text-3xl font-serif mt-2 mb-6">Personal Projects</h2>
+      <h3 className="text-sm text-gray-400 dark:text-gray-500">PROJECTS</h3>
+      <h2 className="text-3xl font-serif mt-2 mb-6 dark:text-gray-100">Personal Projects</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {displayedProjects.map((p, i) => (
           <motion.div
             key={i}
-            className="border rounded p-6 shadow-sm bg-gray-50 relative cursor-pointer"
+            className="border border-gray-200 dark:border-gray-700 rounded p-6 shadow-sm bg-gray-50 dark:bg-gray-800 relative cursor-pointer"
             initial={{ opacity: 0, y: 20, borderColor: "#e5e7eb", boxShadow: "0 0 0px rgba(0, 0, 0, 0)" }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: i * 0.1 }}
@@ -72,15 +72,15 @@ export default function Projects() {
             }}
           >
             <div className="flex items-center gap-2 mb-3">
-              <FaGithub className="text-gray-700 w-5 h-5" />
-              <h4 className="text-lg font-semibold">{p.name}</h4>
+              <FaGithub className="text-gray-700 dark:text-gray-300 w-5 h-5" />
+              <h4 className="text-lg font-semibold dark:text-gray-100">{p.name}</h4>
             </div>
-            <p className="mt-2 text-gray-600 leading-relaxed">{p.desc}</p>
+            <p className="mt-2 text-gray-600 dark:text-gray-300 leading-relaxed">{p.desc}</p>
             <div className="mt-4 flex flex-wrap gap-2">
               {p.tags.map((tag, idx) => (
                 <span 
                   key={idx} 
-                  className="px-2 py-1 text-xs rounded border"
+                  className="px-2 py-1 text-xs rounded border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300"
                 >
                   {tag}
                 </span>
@@ -90,7 +90,7 @@ export default function Projects() {
               href={p.link} 
               target="_blank" 
               rel="noreferrer" 
-              className="mt-4 inline-block text-blue-600 hover:text-blue-700 transition-colors"
+              className="mt-4 inline-block text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition-colors"
             >
               View on GitHub →
             </a>
