@@ -117,7 +117,7 @@ export default function Sidebar() {
         <p className="mt-2 text-[11px] md:text-xs text-gray-500">Software Engineer</p>
       </div>
 
-      <nav className="mt-8" aria-label="Primary">
+      <nav className="mt-6" aria-label="Primary">
         <ul className="w-full flex flex-col items-center">
           {NAV.map(({ id, label }) => {
             const isActive = isActiveFor(id);
@@ -146,20 +146,25 @@ export default function Sidebar() {
         </ul>
       </nav>
 
-      <div className="mt-auto flex flex-col gap-2">
+      <div className="mt-6 flex flex-col gap-3 mb-4">
         {/* Download CV Button */}
-        <div className="w-full flex justify-center">
+        <div className="w-full">
           <a
             href="/assets/resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="
               inline-block
+              w-full
+              text-center
               px-4
               py-2
               border
               border-gray-300
               rounded-md
+              text-[11px]
+              md:text-xs
+              uppercase
               text-gray-600
               hover:text-gray-900
               hover:border-gray-400
@@ -167,28 +172,40 @@ export default function Sidebar() {
               duration-150
             "
           >
-            <span className="text-[11px] md:text-xs uppercase">DOWNLOAD RESUME</span>
+            DOWNLOAD RESUME
           </a>
         </div>
 
-        <div className="w-full flex items-center justify-center gap-4 text-gray-700 pb-4">
+        <div className="w-full flex items-center justify-center gap-5 text-gray-600 pb-2">
           <a
             href="https://www.linkedin.com/in/anubhav-majumdar/"
             target="_blank"
             rel="noreferrer"
             aria-label="LinkedIn"
-            className="hover:text-gray-900"
+            className="hover:text-gray-900 transition-colors duration-150"
             title="LinkedIn"
           >
-            <FaLinkedin className="w-5 h-5" />
+            <FaLinkedin className="w-4 h-4" />
           </a>
 
-          <a href="mailto:anubhav.majumdar.in@gmail.com" aria-label="Email" className="hover:text-gray-900" title="Email">
-            <HiOutlineMail className="w-5 h-5" />
+          <a 
+            href="mailto:anubhav.majumdar.in@gmail.com" 
+            aria-label="Email" 
+            className="hover:text-gray-900 transition-colors duration-150" 
+            title="Email"
+          >
+            <HiOutlineMail className="w-4 h-4" />
           </a>
 
-          <a href="https://github.com/anubhav217" target="_blank" rel="noreferrer" aria-label="GitHub" className="hover:text-gray-900" title="GitHub">
-            <FaGithub className="w-5 h-5" />
+          <a 
+            href="https://github.com/anubhav217" 
+            target="_blank" 
+            rel="noreferrer" 
+            aria-label="GitHub" 
+            className="hover:text-gray-900 transition-colors duration-150" 
+            title="GitHub"
+          >
+            <FaGithub className="w-4 h-4" />
           </a>
         </div>
       </div>
