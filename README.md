@@ -25,7 +25,7 @@ Note: The base path is configured in `vite.config.mjs`. If your repository name 
 Files :
 -------------
 - package.json, vite.config.js, tailwind.config.cjs, postcss.config.cjs
-- public/assets/* (profile.jpg, hero.jpg, resume.pdf if present)
+- public/assets/* (profile.jpg, hero.jpg, Resume_2026.pdf if present)
 - public/index.html
 - src/index.css
 - src/main.jsx
@@ -33,4 +33,4 @@ Files :
 - src/components/* (Sidebar, Hero, About, Education, Experience, Projects, Skills, Contact)
 - .github/workflows/deploy.yml (GitHub Actions workflow for deployment)
 
-Assets: profile.jpg, resume.pdf, hero.jpg
+Assets: profile.jpg, Resume_2026.pdf, hero.jpg

@@ -185,7 +185,7 @@ export default function Sidebar() {
         {/* Download CV Button */}
         <div className="w-full">
           <a
-            href={`${import.meta.env.BASE_URL}assets/resume.pdf`}
+            href={`${import.meta.env.BASE_URL}assets/Resume_2026.pdf`}
             target="_blank"
             rel="noopener noreferrer"
             className="
