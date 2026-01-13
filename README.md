@@ -20,8 +20,6 @@ Deployment (GitHub Pages)
 5. The site will automatically deploy on every push to the `v2.3x` branch
 6. Your site will be available at: `https://anubhav217.github.io/Anubhav-Portfolio/`
 
-Note: After setting the source to GitHub Actions, you may need to trigger a new workflow run for the initial deployment.
-
 Note: The base path is configured in `vite.config.mjs`. If your repository name is different, update the `base` property.
 
 Files :

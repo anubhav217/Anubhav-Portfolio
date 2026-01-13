@@ -3,8 +3,29 @@ import { motion } from 'framer-motion'
 import { FaBriefcase } from 'react-icons/fa'
 
 const EXP = [
-  { title: 'PwC India : SDE III', date: 'Sep 2021 - Present', details: 'Worked on AWS migrations and building scalable services.', color: 'blue' },
-  { title: 'SDE Intern - CodeChef', date: '2020', details: 'Various internships and projects.', color: 'red' }
+  { 
+    title: 'PwC India - SDE III', 
+    date: 'Sep 2021 - Present', 
+    details: [
+      'Led AWS migrations and built scalable cloud infrastructure',
+      'Engineered contextual signals for enhanced ad targeting',
+      'Optimized system performance and resource utilization',
+      'Created comprehensive test automation suite improving efficiency and reducing cycle times',
+      'Enhanced ChatPwC with new features improving enterprise-wide communication and automation'
+    ], 
+    color: 'blue' 
+  },
+  { 
+    title: 'CodeChef - SDE Intern', 
+    date: 'Jul 2020 - Feb 2021', 
+    details: [
+      'Designed and reviewed problems for rated contests engaging large participant base',
+      'Coordinated external rated contests by optimizing solutions and managing participant queries',
+      'Streamlined plagiarism detection across submissions and categorized problems with solution documentation',
+      'Optimized sitewide SEO reducing page load times and improving user engagement metrics'
+    ], 
+    color: 'red' 
+  }
 ]
 
 const colorClasses = {
@@ -67,7 +88,11 @@ export default function Experience() {
                   <h4 className="text-lg sm:text-xl font-semibold dark:text-gray-100">{e.title}</h4>
                   <div className="text-sm text-gray-400 dark:text-gray-400 sm:whitespace-nowrap sm:ml-4">{e.date}</div>
                 </div>
-                <p className="text-sm sm:text-base text-gray-700 dark:text-gray-300 leading-relaxed">{e.details}</p>
+                <ul className="text-sm sm:text-base text-gray-700 dark:text-gray-300 leading-relaxed list-disc list-inside space-y-1">
+                  {Array.isArray(e.details) ? e.details.map((detail, idx) => (
+                    <li key={idx}>{detail}</li>
+                  )) : <li>{e.details}</li>}
+                </ul>
               </motion.div>
             </motion.div>
           ))}
