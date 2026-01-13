@@ -17,7 +17,7 @@ const EXP = [
   },
   { 
     title: 'CodeChef - SDE Intern', 
-    date: 'Jul 2020 - Feb 2021', 
+    date: '2020', 
     details: [
       'Designed and reviewed problems for rated contests engaging large participant base',
       'Coordinated external rated contests by optimizing solutions and managing participant queries',
