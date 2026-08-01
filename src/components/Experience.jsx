@@ -4,7 +4,7 @@ import { FaBriefcase } from 'react-icons/fa'
 
 const EXP = [
   { 
-    title: 'PwC India - SDE III', 
+    title: 'PwC India - SDE', 
     date: 'Sep 2021 - Present', 
     details: [
       'Led AWS migrations and built scalable cloud infrastructure',
